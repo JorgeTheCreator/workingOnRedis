@@ -1,0 +1,23 @@
+<style>
+  .del:checked + span {
+    color:red
+  }
+</style>
+<form method="post" action ="/task/add">
+  <label>Add Taks</label>
+  <input type= 'text' name='task' placeholder='Add Task'>
+  <input type="submit" value="Submit">
+</form>
+<%= title %>
+
+<form method = "post" action="/task/delete"></form>
+  <ul>
+    <% tasks.map((task)=>{ %>
+        <li>
+            <label>
+              <input type="checkbox" name="tasks" class='del' val="<%= task %>"><span><%= task %></span>
+            </label>
+        </li>
+   <% }) %>
+  </ul>
+</form>
