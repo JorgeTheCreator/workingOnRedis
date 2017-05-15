@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/',(req,res)=>{
-  let title = 'Task List';
+  let title = 'Tech Brain Task-list';
   client.lrange('tasks', 0, -1, (err, reply)=>{
       res.render('index',{
         title: title,
